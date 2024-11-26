@@ -15,6 +15,8 @@ When it gets under 20% it sends a notification warning of low battery.
 
 If you get warnings because of signature or similar, right-click on it and choose "open"; or in Settings > Privacy & Security scroll down and click "open anyway".
 
+
+
 ## License
 
-This app heavily uses the [https://github.com/1kc/librazermacos](librazermacos c library). Some private methods' have been exposed publicy. No other changes made.
+This app heavily uses the [librazermacos c library](https://github.com/1kc/librazermacos). Some private methods' have been exposed publicy. No other changes made.
