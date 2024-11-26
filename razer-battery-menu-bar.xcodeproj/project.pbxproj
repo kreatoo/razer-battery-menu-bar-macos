@@ -6,14 +6,39 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FAA9C7CB2CF607CB008DF8A9 /* battery.c in Sources */ = {isa = PBXBuildFile; fileRef = FAA9C7C92CF607C6008DF8A9 /* battery.c */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		FA2D5DCB2CF627F500017CE0 /* battery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = battery.h; sourceTree = "<group>"; };
 		FAA9C7682CF5D4DD008DF8A9 /* razer-battery-menu-bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "razer-battery-menu-bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA9C7C92CF607C6008DF8A9 /* battery.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = battery.c; sourceTree = "<group>"; };
+		FAA9C7CC2CF6082C008DF8A9 /* bridging_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging_header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FA6775652CF637FF00638E75 /* Exceptions for "razer-battery-menu-bar" folder in "razer-battery-menu-bar" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FAA9C7672CF5D4DD008DF8A9 /* razer-battery-menu-bar */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FAA9C76A2CF5D4DD008DF8A9 /* razer-battery-menu-bar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FA6775652CF637FF00638E75 /* Exceptions for "razer-battery-menu-bar" folder in "razer-battery-menu-bar" target */,
+			);
 			path = "razer-battery-menu-bar";
+			sourceTree = "<group>";
+		};
+		FAA9C8492CF60913008DF8A9 /* librazermacos */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = librazermacos;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,8 +57,9 @@
 		FAA9C75F2CF5D4DC008DF8A9 = {
 			isa = PBXGroup;
 			children = (
-				FAA9C76A2CF5D4DD008DF8A9 /* razer-battery-menu-bar */,
+				FAA9C81A2CF60893008DF8A9 /* battery-group */,
 				FAA9C7692CF5D4DD008DF8A9 /* Products */,
+				FAA9C76A2CF5D4DD008DF8A9 /* razer-battery-menu-bar */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,6 +69,17 @@
 				FAA9C7682CF5D4DD008DF8A9 /* razer-battery-menu-bar.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FAA9C81A2CF60893008DF8A9 /* battery-group */ = {
+			isa = PBXGroup;
+			children = (
+				FA2D5DCB2CF627F500017CE0 /* battery.h */,
+				FAA9C7C92CF607C6008DF8A9 /* battery.c */,
+				FAA9C7CC2CF6082C008DF8A9 /* bridging_header.h */,
+				FAA9C8492CF60913008DF8A9 /* librazermacos */,
+			);
+			path = "battery-group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,6 +99,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				FAA9C76A2CF5D4DD008DF8A9 /* razer-battery-menu-bar */,
+				FAA9C8492CF60913008DF8A9 /* librazermacos */,
 			);
 			name = "razer-battery-menu-bar";
 			packageProductDependencies = (
@@ -94,6 +132,8 @@
 			);
 			mainGroup = FAA9C75F2CF5D4DC008DF8A9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FAA9C7692CF5D4DD008DF8A9 /* Products */;
 			projectDirPath = "";
@@ -119,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA9C7CB2CF607CB008DF8A9 /* battery.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +289,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "razer-battery-menu-bar/razer_battery_menu_bar.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -257,15 +300,19 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "razer-battery-menu-bar/Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpera.razer-battery-menu-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "battery-group/bridging_header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -275,7 +322,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "razer-battery-menu-bar/razer_battery_menu_bar.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -284,15 +333,19 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "razer-battery-menu-bar/Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpera.razer-battery-menu-bar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "battery-group/bridging_header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

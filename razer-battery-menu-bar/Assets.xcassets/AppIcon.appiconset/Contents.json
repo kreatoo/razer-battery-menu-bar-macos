@@ -1,51 +1,61 @@
 {
   "images" : [
     {
+      "filename" : "mouse-73-16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
+      "filename" : "mouse-73-32 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
+      "filename" : "mouse-73-32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
+      "filename" : "mouse-73-64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
+      "filename" : "mouse-73-128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
+      "filename" : "mouse-73-256 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
+      "filename" : "mouse-73-256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
+      "filename" : "AppIcon256x256 1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
+      "filename" : "AppIcon256x256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
+      "filename" : "mouse-73-1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
