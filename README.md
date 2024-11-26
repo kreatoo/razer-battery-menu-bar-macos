@@ -8,7 +8,7 @@ When it gets under 20% it sends a notification warning of low battery.
 
 ## How to install
 
-1. Download app from releases.
+1. Download app from [releases](https://github.com/AlexPerathoner/razer-battery-menu-bar-macos/releases/latest).
 2. Move into `/Applications`
 3. In System Settings > Login Elements, click on `+` and select `razer-battery-menu-bar.app` to open automatically on login.
 
