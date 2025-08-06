@@ -28,8 +28,12 @@ struct razer_battery_menu_barApp: App {
     
     var body: some Scene {
         MenuBarExtra {
-            Text("\(batteryMonitor.batteryLevel)%")
-            Text(batteryMonitor.isCharging ? "Charging" : "Discharging")
+            if batteryMonitor.isDeviceConnected {
+                Text("\(batteryMonitor.batteryLevel)%")
+                Text(batteryMonitor.isCharging ? "Charging" : "Discharging")
+            } else {
+                Text("Device not connected")
+            }
             Button("Update") {
                 batteryMonitor.updateBatteryLevel()
             }
@@ -46,7 +50,11 @@ struct razer_battery_menu_barApp: App {
             let renderer = ImageRenderer(content:
                 HStack {
                     Image(nsImage: NSImage(named: "Image")!).colorScheme(.dark)
-                    Image(systemName: getIcon(batteryMonitor.batteryLevel)).padding(.leading, -10).colorScheme(.dark)
+                    if batteryMonitor.isDeviceConnected {
+                        Image(systemName: getIcon(batteryMonitor.batteryLevel)).padding(.leading, -10).colorScheme(.dark)
+                    } else {
+                        Image(systemName: "exclamationmark.circle").padding(.leading, -10).colorScheme(.dark)
+                    }
                 }
             )
             Image(nsImage: renderer.nsImage!)

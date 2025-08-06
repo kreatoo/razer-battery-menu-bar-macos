@@ -14,6 +14,7 @@ class BatteryMonitor: ObservableObject {
     @Published var errorMessage = ""
     @Published var isCharging: Bool = false
     @Published var sentNotification: Bool = false
+    @Published var isDeviceConnected: Bool = true
 
     private var timer: Timer?
 
@@ -38,8 +39,10 @@ class BatteryMonitor: ObservableObject {
                     self.sendLowBatteryNotification()
                 }
                 self.errorMessage = ""
+                self.isDeviceConnected = true
             } else {
                 self.errorMessage = "Could not get battery level"
+                self.isDeviceConnected = false
             }
 
             let is_charging = is_charging()
