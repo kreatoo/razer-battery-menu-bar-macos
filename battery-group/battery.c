@@ -16,15 +16,16 @@
  */
 int is_device_wireless(UInt16 productId) {
     return (productId == USB_DEVICE_ID_RAZER_MAMBA_2012_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_MAMBA_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_LANCEHEAD_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_NAGA_PRO_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_LANCEHEAD_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_LANCEHEAD_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_MAMBA_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_MAMBA_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_VIPER_ULTIMATE_WIRELESS) ||
-        (productId == USB_DEVICE_ID_RAZER_DEATHADDER_V2_PRO_WIRELESS);
+    (productId == USB_DEVICE_ID_RAZER_MAMBA_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_LANCEHEAD_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_NAGA_PRO_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_LANCEHEAD_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_LANCEHEAD_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_MAMBA_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_MAMBA_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_VIPER_ULTIMATE_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_DEATHADDER_V2_PRO_WIRELESS) ||
+    (productId == USB_DEVICE_ID_RAZER_DEATHADDER_V3_PRO_WIRELESS);
 }
 
 
@@ -44,8 +45,8 @@ int get_battery_level(void) {
             ssize_t result = razer_attr_read_get_battery(device.usbDevice, battery_level); // Assuming usbDevice is accessible
             if (result > 0)
             {
-                // Convert the raw battery level to an integer
-                int battery_level_raw = (unsigned char)battery_level[0]; // Assuming the first byte contains the battery level
+                // Parse the battery level from the returned string (format: "level\n")
+                int battery_level_raw = atoi(battery_level);
                 printf("Battery level raw: %d\n", battery_level_raw);
                 // Scale result from 0-255 to 0-100
                 int battery_level_percent = (battery_level_raw * 100) / 255;
